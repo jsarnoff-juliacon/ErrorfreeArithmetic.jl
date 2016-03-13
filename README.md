@@ -1,0 +1,2 @@
+# ErrorfreeArith.jl
+errorfree and nearly errorfree transformations for accurate arithmetic
