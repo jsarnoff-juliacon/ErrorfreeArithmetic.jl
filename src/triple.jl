@@ -56,3 +56,24 @@ function eftFMS{T<:AbstractFloat}(a::T, b::T, c::T)
 end
 
 
+function eftFMAto2{T<:AbstractFloat}(a::T, b::T, c::T)
+    x = fma(a,b,c)
+    u1,u2 = eftMul(a,b)
+    a1,a2 = eftAdd(u2,c)
+    b1,b2 = eftAdd(u1,a1)
+    g = (b1-x)+b2
+    y = g+a2
+    x,y
+end
+
+function eftFMSto2{T<:AbstractFloat}(a::T, b::T, c::T)
+    x = fma(a,b,-c)
+    u1,u2 = eftMul(a,b)
+    a1,a2 = eftSub(u2,c)
+    b1,b2 = eftAdd(u1,a1)
+    g = (b1-x)+b2
+    y = g+a2
+    x,y
+end
+
+
