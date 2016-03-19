@@ -2,7 +2,7 @@ module ErrorfreeArithmetic
 
 import Base: (+),(-),(*),fma
 
-export eftIncr, eftDecr, eftSqr, eftCub,  # single
+export eftIncr, eftDecr, eftSqr,          # single
        eftAdd, eftSub, eftMul,            # double
        eftAdd3, eftMul3, eftFMA           # triple
 
