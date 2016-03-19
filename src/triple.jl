@@ -7,6 +7,14 @@ function eftAdd3{T<:Float64}(a::T,b::T,c::T)
     x,y,z
 end
 
+function eftAdd3to2{T<:Float64}(a::T,b::T,c::T)
+    s,t = eftAdd(b, c)
+    x,u = eftAdd(a, s)
+    y   = u+t
+    x,y = eftAddGTE(x, y)
+    x,y
+end
+
 function eftMul3to4{T<:AbstractFloat}(a::T, b::T, c::T)
     p,e = eftMul(a,b)
     x,y = eftMul(p,c)
