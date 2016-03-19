@@ -12,3 +12,19 @@ function eftCub(a::AbstractFloat)
     x,y
 end
 
+function eftIncr{T<:AbstractFloat}(a::T)
+  b = one(T)
+  x = a + b
+  t = x - a
+  y = (a - (x - t)) + (b - t)
+  x,y
+end
+
+
+function eftDecr{T<:AbstractFloat}(a::T)
+  b = one(T)
+  x = a - b
+  t = x - a
+  y = (a - (x - t)) - (b + t)
+  x,y
+end
