@@ -2,6 +2,8 @@ module ErrorfreeArithmetic
 
 import Base: (+),(-),(*),fma
 
+import JAS: Float
+
 export eftIncr, eftDecr, eftSqr,          # single
        eftAdd, eftSub, eftMul,            # double
        eftAddGTE, eftSubGTE,
