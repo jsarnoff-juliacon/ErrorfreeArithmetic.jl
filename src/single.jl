@@ -1,11 +1,11 @@
 
-function eftSqr(a::AbstractFloat)
+function eftSqr{T<:StdFloat}(a::T)
     x = a * a
     y = fma(a, a, -x)
     x,y
 end
 
-function eftIncr{T<:AbstractFloat}(a::T)
+function eftIncr{T<:StdFloat}(a::T)
   b = one(T)
   x = a + b
   t = x - a
@@ -13,7 +13,7 @@ function eftIncr{T<:AbstractFloat}(a::T)
   x,y
 end
 
-function eftDecr{T<:AbstractFloat}(a::T)
+function eftDecr{T<:StdFloat}(a::T)
   b = one(T)
   x = a - b
   t = x - a
