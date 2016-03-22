@@ -1,2 +1,2 @@
 ## ErrorfreeArithmetic
-errorfree and nearly errorfree transformations for accurate arithmetic
+errorfree transformations and other equally accurate arithmetic mappings
