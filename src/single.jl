@@ -6,19 +6,19 @@ function eftSqr{T<:StdFloat}(a::T)
 end
 
 function eftIncr{T<:StdFloat}(a::T)
-  b = one(T)
-  x = a + b
-  t = x - a
-  y = (a - (x - t)) + (b - t)
-  x,y
+    b = one(T)
+    x = a + b
+    t = x - a
+    y = (a - (x - t)) + (b - t)
+    x,y
 end
 
 function eftDecr{T<:StdFloat}(a::T)
-  b = one(T)
-  x = a - b
-  t = x - a
-  y = (a - (x - t)) - (b + t)
-  x,y
+    b = one(T)
+    x = a - b
+    t = x - a
+    y = (a - (x - t)) - (b + t)
+    x,y
 end
 
 function eftRecip{T<:StdFloat}(b::T)
