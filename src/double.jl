@@ -1,41 +1,41 @@
 
 function eftAdd{T<:StdFloat}(a::T, b::T)
-  x = a + b
-  t = x - a
-  y = (a - (x - t)) + (b - t)
-  x,y
+  hi = a + b
+  t = hi - a
+  lo = (a - (hi - t)) + (b - t)
+  hi,lo
 end
 
 function eftAddGTE{T<:StdFloat}(a::T, b::T)
-  x = a + b
-  y = b - (x - a)
-  x,y
+  hi = a + b
+  lo = b - (hi - a)
+  hi,lo
 end
 
 function eftSub{T<:StdFloat}(a::T, b::T)
-  x = a - b
-  t = x - a
-  y = (a - (x - t)) - (b + t)
-  x,y
+  hi = a - b
+  t = hi - a
+  lo = (a - (hi - t)) - (b + t)
+  hi,lo
 end
 
 function eftSubGTE{T<:StdFloat}(a::T, b::T)
-  x = a - b
-  y = (a - x) - b
-  x,y
+  hi = a - b
+  lo = (a - hi) - b
+  hi,lo
 end
 
 function eftMul{T<:StdFloat}(a::T, b::T)
-    x = a * b
-    y = fma(a, b, -x)
-    x,y
+    hi = a * b
+    lo = fma(a, b, -hi)
+    hi,lo
 end
 
 function eftDiv{T<:StdFloat}(a::T, b::T)
-    q0 = a/b
-    r = fma(-b,q0,a)
-    q1 = r/b
-    r = fma(-b,q1,r)
-    q1 += r/b
-    q0,q1
+    hi = a/b
+    rest = fma(-b,hi,a)
+    lo = rest/b
+    rest = fma(-b,lo,rest)
+    lo += rest/b
+    hi,lo
 end
