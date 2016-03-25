@@ -20,3 +20,17 @@ function eftDecr{T<:StdFloat}(a::T)
   y = (a - (x - t)) - (b + t)
   x,y
 end
+
+function eftRecip{T<:StdFloat}(b::T)
+    a = one(T)
+    q0 = one(T)/b
+    r = fma(-b,q0,a)
+    q1 = r/b
+    r = fma(-b,q1,r)
+    q2 = r/b
+    r = fma(-b,q2,r)
+    q3 = r / b
+    q2 += q3
+    q1 += q2
+    q0,q1
+end
