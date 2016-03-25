@@ -31,3 +31,11 @@ function eftMul{T<:StdFloat}(a::T, b::T)
     x,y
 end
 
+function eftDiv{T<:StdFloat}(a::T, b::T)
+    q0 = a/b
+    r = fma(-b,q0,a)
+    q1 = r/b
+    r = fma(-b,q1,r)
+    q1 += r/b
+    q0,q1
+end
