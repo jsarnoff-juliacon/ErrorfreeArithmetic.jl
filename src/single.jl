@@ -30,7 +30,6 @@ function eftRecip{T<:StdFloat}(b::T)
     q2 = r/b
     r = fma(-b,q2,r)
     q3 = r / b
-    q2 += q3
-    q1 += q2
+    q1 += (q2 + q3)
     q0,q1
 end
