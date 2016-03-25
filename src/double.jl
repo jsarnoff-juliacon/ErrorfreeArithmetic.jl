@@ -33,9 +33,9 @@ end
 
 function eftDiv{T<:StdFloat}(a::T, b::T)
     hi = a/b
-    rest = fma(-b,hi,a)
-    lo = rest/b
-    rest = fma(-b,lo,rest)
-    lo += rest/b
+    remainder = fma(-b,hi,a)
+    lo = remainder/b
+    remainder = fma(-b,lo,remainder)
+    lo += remainder/b
     hi,lo
 end
