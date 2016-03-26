@@ -39,3 +39,4 @@ function eftDiv{T<:StdFloat}(a::T, b::T)
     lo += remainder/b
     hi,lo
 end
+
