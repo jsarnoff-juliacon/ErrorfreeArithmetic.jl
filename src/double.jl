@@ -40,3 +40,9 @@ function eftDiv{T<:StdFloat}(a::T, b::T)
     hi,lo
 end
 
+# for use with directed rounding, when only the sign of the lo part is needed
+function eftDivApprox{T<:AbstractFloat}(a::T, b::T)
+    hi = a/b
+    loApprox = -fma(b,hi,-a) # sign is correct, value is actual*b
+    hi,loApprox
+end
