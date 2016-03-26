@@ -23,7 +23,7 @@ function eftMul3to4{T<:StdFloat}(a::T, b::T, c::T)
     z,t = eftMul(e,c)
     y,z = eftAdd(y,z)
     x,y = eftAdd(x,y)
-    x,y,z,t
+    eftAddGTE(x,y,z,t)
 end
 
 function eftMul{T<:StdFloat}(a::T, b::T, c::T)
