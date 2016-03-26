@@ -26,7 +26,7 @@ function eftMul3to4{T<:StdFloat}(a::T, b::T, c::T)
     x,y,z,t
 end
 
-function eftMul3{T<:StdFloat}(a::T, b::T, c::T)
+function eftMul{T<:StdFloat}(a::T, b::T, c::T)
     p,e = eftMul(a,b)
     x,y = eftMul(p,c)
     z   = e*c
@@ -34,6 +34,8 @@ function eftMul3{T<:StdFloat}(a::T, b::T, c::T)
     x,y = eftAdd(x,y)
     x,y,z
 end
+
+eftMul3{T<:StdFloat}(a::T, b::T, c::T) = eftMul{T}(a,b,c)
 
 function eftMul3to2{T<:StdFloat}(a::T, b::T, c::T)
     p,e = eftMul(a,b)
