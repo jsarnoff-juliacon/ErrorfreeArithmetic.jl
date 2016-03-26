@@ -1,4 +1,4 @@
-eftAdd{T<:StdFloat}(a::T,b::T,c::T,d::T)
+function eftAdd{T<:StdFloat}(a::T,b::T,c::T,d::T)
 
    w=x=y=z=zero(T)
    
