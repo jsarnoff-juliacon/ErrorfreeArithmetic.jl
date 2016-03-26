@@ -1,8 +1,8 @@
 module ErrorfreeArithmetic
 
-import Base: (+),(-),(*),fma
+import Base: (+),(-),(*),(/),fma,sqrt
 
-import JAS: StdFloat
+import JAS: Float, StdFloat
 
 export eftIncr, eftDecr, eftSqr, eftRecip, # single
        eftSqrtApprox,
