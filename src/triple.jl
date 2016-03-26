@@ -1,11 +1,13 @@
 
-function eftAdd{T<:StdFloat}(a::T,b::T,c::T)
+function eftAdd3{T<:StdFloat}(a::T,b::T,c::T)
     s,t = eftAdd(b, c)
     x,u = eftAdd(a, s)
     y,z = eftAdd(u, t)
     x,y = eftAddGTE(x, y)
     x,y,z
 end
+
+eftAdd{T<:StdFloat}(a::T,b::T,c::T) = eftAdd3(a,b,c)
 
 function eftAdd3to2{T<:StdFloat}(a::T,b::T,c::T)
     s,t = eftAdd(b, c)
