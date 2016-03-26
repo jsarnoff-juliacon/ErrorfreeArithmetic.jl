@@ -25,3 +25,5 @@ eftAdd{T<:StdFloat}(a::T,b::T,c::T,d::T)
    
    w,x,y,z
 end
+
+eftAdd4{T<:StdFloat}(a::T,b::T,c::T,d::T) = eftAdd(a,b,c,d)
