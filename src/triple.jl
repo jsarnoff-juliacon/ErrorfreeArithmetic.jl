@@ -1,5 +1,5 @@
 
-function eftAdd3{T<:StdFloat}(a::T,b::T,c::T)
+function eftAdd{T<:StdFloat}(a::T,b::T,c::T)
     s,t = eftAdd(b, c)
     x,u = eftAdd(a, s)
     y,z = eftAdd(u, t)
