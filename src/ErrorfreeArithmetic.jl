@@ -12,8 +12,8 @@ export eftIncr, eftDecr, eftSqr, eftRecip, # single
        eftAdd3to2, eftMul3to4, eftMult3to2,
        eftFMA, eftFMA, eftFMAto2, eftFMSto2
 
-include "single.jl"
-include "double.jl"
-include "triple.jl"
+include("single.jl")
+include("double.jl")
+include("triple.jl")
 
 end # module
