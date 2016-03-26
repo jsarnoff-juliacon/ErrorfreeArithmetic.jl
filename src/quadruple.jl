@@ -1,5 +1,7 @@
 renormalize{T<:StdFloat}(c0::T,c1::T,c2::T,c3::T)
 
+   s0=s1=s2=s3=zero(T)
+   
    s0,c3 = eftAdd(c2,c3)
    s0,c2 = eftAdd(c1,s0)
    c0,c1 = eftAdd(c0,s0)
