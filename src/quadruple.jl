@@ -1,28 +1,27 @@
-renormalize{T<:StdFloat}(c0::T,c1::T,c2::T,c3::T)
+renormalize{T<:StdFloat}(a::T,b::T,c::T,d::T)
 
-   s0=s1=s2=s3=zero(T)
+   w=x=y=z=zero(T)
    
-   s0,c3 = eftAdd(c2,c3)
-   s0,c2 = eftAdd(c1,s0)
-   c0,c1 = eftAdd(c0,s0)
+   w,d = eftAdd(c,d)
+   w,c = eftAdd(b,w)
+   a,b = eftAdd(a,w)
    
-   s0 = c0
-   s1 = c1
-   if s1 != zero(T)
-       s1,s2 = eftAddGTE(s1,c2)
-       if s2 != zero(T)
-           s2,s3 = eftAddGTE(s2,c3)
+   w,x = a,b
+   if x != zero(T)
+       x,y = eftAddGTE(x,c)
+       if y != zero(T)
+           y,z = eftAddGTE(y,d)
        else
-           s1,s2 = eftAddGTE(s1,c3)
+           x,y = eftAddGTE(x,d)
        end
    else
-       s0,s1 = eftAddGTE(s0,c2)
-       if s1 != zero(T)
-           s1,s2 = eftAddGTE(s1,c3)
+       w,x = eftAddGTE(w,c)
+       if x != zero(T)
+           x,y = eftAddGTE(x,d)
        else
-           s0,s1 = eftAddGTE(s0,c3)
+           w,x = eftAddGTE(w,d)
        end
    end
    
-   s0,s1,s2,s3
+   w,x,y,z
 end
