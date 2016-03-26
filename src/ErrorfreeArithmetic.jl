@@ -5,6 +5,7 @@ import Base: (+),(-),(*),fma
 import JAS: StdFloat
 
 export eftIncr, eftDecr, eftSqr, eftRecip, # single
+       eftSqrtApprox,
        eftAdd, eftSub, eftMul, eftDiv,     # double
        eftAddGTE, eftSubGTE, eftDivApprox,
        eftAdd3, eftMul3,                  # triple
