@@ -2,7 +2,7 @@ module ErrorfreeArithmetic
 
 import Base: (+),(-),(*),(/),fma,sqrt
 
-import JAS: Float, StdFloat
+import Genera: Float, StdFloat
 
 export eftIncr, eftDecr, eftSqr, eftRecip, # single
        eftSqrtApprox,
