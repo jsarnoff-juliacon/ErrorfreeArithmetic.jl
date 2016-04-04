@@ -45,9 +45,16 @@ function eftRecip{T<:StdFloat}(b::T)
 end
 =#
 
+function accSqrt{T<:AbstractFloat}(a::T)
+    hi = sqrt(a)
+    lo = fma(-hi,hi,a)
+    lo = lo / (2*hi)
+    hi, lo
+end
+
 # for use when the sign of the part is all that is needed of the lo part
-function eftSqrtApprox(a::AbstractFloat)
+function accSqrtForSign(a::AbstractFloat)
      hi = sqrt(a)
-     loApprox = fma(hi,-hi,a)
+     loApprox = fma(-hi,hi,a)
      hi,loApprox
 end 
