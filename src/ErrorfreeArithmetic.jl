@@ -5,7 +5,7 @@ import Base: (+),(-),(*),(/),fma,sqrt
 import Genera: Float, StdFloat
 
 export eftIncr, eftDecr, eftSqr, eftRecip, # single
-       eftSqrtApprox,
+       accSqrt, accSqrtForSign,
        eftAdd, eftSub, eftMul, eftDiv,     # double
        eftAddGTE, eftSubGTE, eftDivApprox,
        eftAdd3, eftMul3,                   # triple
