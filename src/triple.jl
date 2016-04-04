@@ -7,9 +7,6 @@ function eftAdd{T<:StdFloat}(a::T,b::T,c::T)
     x,y,z
 end
 
-eftAdd3{T<:StdFloat}(a::T,b::T,c::T) = eftAdd(a,b,c)
-
-
 function eftAddGTE{T<:StdFloat}(a::T,b::T,c::T)
     s,t = eftAddGTE(b, c)
     x,u = eftAddGTE(a, s)
@@ -17,8 +14,6 @@ function eftAddGTE{T<:StdFloat}(a::T,b::T,c::T)
     x,y = eftAddGTE(x, y)
     x,y,z
 end
-
-eftAddGTE3{T<:StdFloat}(a::T,b::T,c::T) = eftAddGTE(a,b,c)
 
 
 function eftAdd3to2{T<:StdFloat}(a::T,b::T,c::T)
