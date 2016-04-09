@@ -21,7 +21,7 @@ function eftDecr{T<:StdFloat}(a::T)
     hi,lo
 end
 
-function eftRecip{T<:StdFloat}(b::T)
+function eftInv{T<:StdFloat}(b::T)
     hi = one(T)/b
     r = fma(-b,hi,one(T))
     lo = r/b
@@ -30,20 +30,6 @@ function eftRecip{T<:StdFloat}(b::T)
     hi,lo
 end
 
-#=
-function eftRecip{T<:StdFloat}(b::T)
-    a = one(T)
-    q0 = one(T)/b
-    r = fma(-b,q0,a)
-    q1 = r/b
-    r = fma(-b,q1,r)
-    q2 = r/b
-    r = fma(-b,q2,r)
-    q3 = r / b
-    q1 += (q2 + q3)
-    q0,q1
-end
-=#
 
 function accSqrt{T<:AbstractFloat}(a::T)
     hi = sqrt(a)
