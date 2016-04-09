@@ -16,7 +16,7 @@ function eftAddGTE{T<:StdFloat}(a::T,b::T,c::T)
 end
 
 
-function eftAdd3to2{T<:StdFloat}(a::T,b::T,c::T)
+function eftAddAs2{T<:StdFloat}(a::T,b::T,c::T)
     s,t = eftAdd(b, c)
     x,u = eftAdd(a, s)
     y   = u+t
@@ -24,7 +24,7 @@ function eftAdd3to2{T<:StdFloat}(a::T,b::T,c::T)
     x,y
 end
 
-function eftMul3to4{T<:StdFloat}(a::T, b::T, c::T)
+function eftMulAs4{T<:StdFloat}(a::T, b::T, c::T)
     p,e = eftMul(a,b)
     x,y = eftMul(p,c)
     z,t = eftMul(e,c)
@@ -44,7 +44,7 @@ end
 
 eftMul3{T<:StdFloat}(a::T, b::T, c::T) = eftMul{T}(a,b,c)
 
-function eftMul3to2{T<:StdFloat}(a::T, b::T, c::T)
+function eftMulAs2{T<:StdFloat}(a::T, b::T, c::T)
     p,e = eftMul(a,b)
     x,y = eftMul(p,c)
     z   = e*c
@@ -75,7 +75,7 @@ function eftFMS{T<:StdFloat}(a::T, b::T, c::T)
 end
 
 
-function eftFMAto2{T<:StdFloat}(a::T, b::T, c::T)
+function eftFMAas2{T<:StdFloat}(a::T, b::T, c::T)
     x = fma(a,b,c)
     u1,u2 = eftMul(a,b)
     a1,a2 = eftAdd(u2,c)
@@ -85,7 +85,7 @@ function eftFMAto2{T<:StdFloat}(a::T, b::T, c::T)
     x,y
 end
 
-function eftFMSto2{T<:StdFloat}(a::T, b::T, c::T)
+function eftFMSas2{T<:StdFloat}(a::T, b::T, c::T)
     x = fma(a,b,-c)
     u1,u2 = eftMul(a,b)
     a1,a2 = eftSub(u2,c)
