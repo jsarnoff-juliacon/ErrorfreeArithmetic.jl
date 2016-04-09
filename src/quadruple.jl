@@ -54,7 +54,7 @@ function eftAddGTE{T<:StdFloat}(a::T,b::T,c::T,d::T)
    w,x,y,z
 end
 
-function eftAdd4to3{T<:StdFloat}(a::T,b::T,c::T,d::T)
+function eftAddAs3{T<:StdFloat}(a::T,b::T,c::T,d::T)
 
    w=x=y=z=zero(T)
    
@@ -82,7 +82,7 @@ function eftAdd4to3{T<:StdFloat}(a::T,b::T,c::T,d::T)
    w,x,y
 end
 
-function eftAddGTE4to3{T<:StdFloat}(a::T,b::T,c::T,d::T)
+function eftAddGTEas3{T<:StdFloat}(a::T,b::T,c::T,d::T)
 
    w=x=y=zero(T)
    
