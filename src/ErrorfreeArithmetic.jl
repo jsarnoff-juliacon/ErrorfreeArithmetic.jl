@@ -10,12 +10,14 @@ export eftIncr, eftDecr, eftSqr, eftRecip,   # single
        eftFMA, eftFMA, eftFMAas2, eftFMSas2,
        eftAddAs3, eftAddGTEas3               # quadruple (also eftAdd, eftAddGTE)
 
-if isdefined(Main,:StdFloat)
+
+# all functions use type StdFloat
+if !isdefined(:StdFloat)
+  if isdefined(Main,:StdFloat)
     import Main:StdFloat
-elseif isdefined(:StdFloat)
-    import StdFloat
-else    
+  else    
     typealias StdFloat Union{Float64,Float32,Float16}
+  end
 end    
 
 include("single.jl")
