@@ -2,7 +2,7 @@ module ErrorfreeArithmetic
 
 import Base: (+),(-),(*),(/),fma,sqrt
 
-import Genera: Float, StdFloat
+import Genera: StdFloat, SysFloat
 
 export eftIncr, eftDecr, eftSqr, eftRecip,   # single
        accSqrt, accSqrtForSign,
