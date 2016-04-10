@@ -8,6 +8,9 @@ errorfree transformations and other arithmetic mappings of like accuracy
 ```julia
 using ErrorfreeArithmetic
 
-hiPart, loPart = eftAdd(1234.0, 0.1234)
+show(hi,lo) = println(hi," ",lo)
+
+hiPart, loPart = eftAdd(12345.0f0, 0.12345f0) 
+shw(hiPart,loPart) # 12345.123f0, 0.00040312856f0
 
 ```
