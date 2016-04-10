@@ -31,7 +31,7 @@ function eftInv{T<:StdFloat}(b::T)
 end
 
 
-function accSqrt{T<:AbstractFloat}(a::T)
+function accSqrt{T<:StdFloat}(a::T)
     hi = sqrt(a)
     lo = fma(-hi,hi,a)
     lo = lo / (2*hi)
@@ -39,7 +39,7 @@ function accSqrt{T<:AbstractFloat}(a::T)
 end
 
 # for use when the sign of the part is all that is needed of the lo part
-function accSqrtForSign(a::AbstractFloat)
+function accSqrtForSign(a::StdFloat)
      hi = sqrt(a)
      loApprox = fma(-hi,hi,a)
      hi,loApprox
