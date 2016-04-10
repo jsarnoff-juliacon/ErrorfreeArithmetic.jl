@@ -14,4 +14,7 @@ showall( (hiPart,loPart) ) # 12345.123f0, 0.00040312856f0
 hiPart, loPart  =  eftAdd(   12345.0    , 0.12345         ) 
 showall( (hiPart,loPart) ) # 12345.12345, 8.614775559578902e-13
 
+loPart == Float64((big(12345.0)+big(0.12345)) - big(hiPart)) # true
+
+
 ```
