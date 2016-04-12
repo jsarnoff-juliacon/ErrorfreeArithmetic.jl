@@ -3,6 +3,14 @@ errorfree transformations and other arithmetic mappings of like accuracy
 ```ruby
                                                        Jeffrey Sarnoff © 2016-Mar-22 at New York
 ```
+#### Exports
+  eftIncr, eftDecr, eftSqr, eftRecip,   # 1 arg
+  accSqrt, accSqrtForSign,  
+  eftAdd, eftSub, eftMul, eftDiv,       # 2 args  
+  eftAddGTE, eftSubGTE, eftDivApprox,
+  eftAddAs2, eftMulAs4, eftMulAs2,      # 3 args (also eftAdd, eftAddGTE, eftMul)  
+  eftFMA, eftFMA, eftFMAas2, eftFMSas2,  
+  eftAddAs3, eftAddGTEas3               # 4 args (also eftAdd, eftAddGTE)
 
 #### Use
 ```julia
