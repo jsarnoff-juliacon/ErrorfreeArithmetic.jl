@@ -4,7 +4,7 @@ errorfree transformations and other arithmetic mappings of like accuracy
                                                        Jeffrey Sarnoff © 2016-Mar-22 at New York
 ```
 #### Exports
-  eftIncr, eftDecr, eftSqr, eftRecip,   # 1 arg
+  eftIncr, eftDecr, eftSqr, eftRecip,   # 1 arg  
   accSqrt, accSqrtForSign,  
   eftAdd, eftSub, eftMul, eftDiv,       # 2 args  
   eftAddGTE, eftSubGTE, eftDivApprox,
