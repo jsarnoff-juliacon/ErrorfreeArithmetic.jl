@@ -46,3 +46,11 @@ function accDivForSign{T<:StdFloat}(a::T, b::T)
     loApprox = -fma(b,hi,-a) # sign is correct, value is actual*b
     hi,loApprox
 end
+
+for fn in (:eftAdd, :eftAddGTE, :eftSub, :eftSubGTE, :eftMul, :accDiv, :accDivForSign)
+  @eval begin
+    ($fn){T1<:Real,T2<:StdFloat}(a::T1, b::T2) = ($fn)(convert(Float64,a), b)
+    ($fn){T1<:Real,T2<:StdFloat}(a::T2, b::T1) = ($fn)(a, convert(Float64,b))
+    ($fn){T1<:Real,T2<:Real}(a::T1, b::T2) = ($fn)(convert(Float64,a), convert(Float64,b))
+  end
+end
