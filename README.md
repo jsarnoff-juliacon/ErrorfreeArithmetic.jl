@@ -26,3 +26,6 @@ loPart == Float64((big(12345.0)+big(0.12345)) - big(hiPart)) # true
 
 
 ```
+##Notes
+
+These functions will accept any variable _v_ that is a subtype of Real for which convert(Float64, _v_) is defined.  
