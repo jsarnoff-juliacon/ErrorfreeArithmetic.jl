@@ -3,7 +3,7 @@ module ErrorfreeArithmetic
 import Base: (+),(-),(*),(/),fma,sqrt
 
 export eftIncr, eftDecr, eftSqr, eftRecip,   # single
-       accSqrt, accSqrtForSign,
+       accInv, accSqrt, accSqrtForSign,
        eftAdd, eftSub, eftMul, accDiv,       # double
        eftAddGTE, eftSubGTE, accDivApprox,
        eftAddAs2, eftMulAs4, eftMulAs2,      # triple (also eftAdd, eftAddGTE, eftMul)
