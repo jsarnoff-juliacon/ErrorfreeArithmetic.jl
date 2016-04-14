@@ -29,4 +29,3 @@ loPart == Float64((big(12345.0)+big(0.12345)) - big(hiPart)) # true
 ###Notes
 
 These functions will accept variables _v_ that are a subtype of Real for which `convert`(`Float64`, _v_ ) is defined.
-They accept variables _v_ that are a subtype of Number for which `convert`(`Float64`, _v_ ) is defined, using the Float64 values.  
