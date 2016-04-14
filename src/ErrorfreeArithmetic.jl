@@ -4,8 +4,8 @@ import Base: (+),(-),(*),(/),fma,sqrt
 
 export eftIncr, eftDecr, eftSqr, eftRecip,   # single
        accSqrt, accSqrtForSign,
-       eftAdd, eftSub, eftMul, eftDiv,       # double
-       eftAddGTE, eftSubGTE, eftDivApprox,
+       eftAdd, eftSub, eftMul, accDiv,      # double
+       eftAddGTE, eftSubGTE, accDivApprox,
        eftAddAs2, eftMulAs4, eftMulAs2,      # triple (also eftAdd, eftAddGTE, eftMul)
        eftFMA, eftFMA, eftFMAas2, eftFMSas2,
        eftAddAs3, eftAddGTEas3               # quadruple (also eftAdd, eftAddGTE)
