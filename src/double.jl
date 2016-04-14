@@ -41,7 +41,7 @@ function accDiv{T<:StdFloat}(a::T, b::T)
 end
 
 # for use with directed rounding, when only the sign of the lo part is needed
-function accDivApprox{T<:StdFloat}(a::T, b::T)
+function accDivForSign{T<:StdFloat}(a::T, b::T)
     hi = a/b
     loApprox = -fma(b,hi,-a) # sign is correct, value is actual*b
     hi,loApprox
