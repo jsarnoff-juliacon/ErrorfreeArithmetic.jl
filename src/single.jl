@@ -21,7 +21,7 @@ function eftDecr{T<:StdFloat}(a::T)
     hi,lo
 end
 
-function eftInv{T<:StdFloat}(b::T)
+function accInv{T<:StdFloat}(b::T)
     hi = one(T)/b
     r = fma(-b,hi,one(T))
     lo = r/b
@@ -44,3 +44,11 @@ function accSqrtForSign(a::StdFloat)
      loApprox = fma(-hi,hi,a)
      hi,loApprox
 end 
+
+
+for fn in (:eftSqr, :eftIncr, :eftDecr, :accInv, :accSqrt, :accSqrtForSign)
+  @eval begin
+    ($fn){T<:Integer}(a::T) = ($fn)(convert(Float64,a))
+    ($fn){T<:Integer}(a::Rational{T}) = = ($fn)(convert(Float64,a))    
+  end
+end
