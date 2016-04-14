@@ -49,6 +49,7 @@ end
 for fn in (:eftSqr, :eftIncr, :eftDecr, :accInv, :accSqrt, :accSqrtForSign)
   @eval begin
     ($fn){T<:Integer}(a::T) = ($fn)(convert(Float64,a))
-    ($fn){T<:Integer}(a::Rational{T}) = = ($fn)(convert(Float64,a))    
+    ($fn){T<:Integer}(a::Rational{T}) = ($fn)(convert(Float64,a))    
+    ($fn){T<:Real}(a::T) = ($fn)(Float64(a))    
   end
 end
