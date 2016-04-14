@@ -31,7 +31,7 @@ function eftMul{T<:StdFloat}(a::T, b::T)
     hi,lo
 end
 
-function eftDiv{T<:StdFloat}(a::T, b::T)
+function accDiv{T<:StdFloat}(a::T, b::T)
     hi = a/b
     remainder = fma(-b,hi,a)
     lo = remainder/b
@@ -41,7 +41,7 @@ function eftDiv{T<:StdFloat}(a::T, b::T)
 end
 
 # for use with directed rounding, when only the sign of the lo part is needed
-function eftDivApprox{T<:StdFloat}(a::T, b::T)
+function accDivApprox{T<:StdFloat}(a::T, b::T)
     hi = a/b
     loApprox = -fma(b,hi,-a) # sign is correct, value is actual*b
     hi,loApprox
