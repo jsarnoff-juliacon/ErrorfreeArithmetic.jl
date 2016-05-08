@@ -15,13 +15,19 @@ Functions that are errorfree tranformations per se are named using the prefix __
       eftAdd{T<:Float64}(a::T, b::T)  
           an errorfree transformation for the addition of two Float64 values
           s0,s1 = eftAdd(a,b) ST  abs(s0) > abs(s1)  ∧   ulp(s0) > ufp(s1)
-              s0 ⊕ s1  == a + b      and     x == x + y
+              s0 ⊕ s1  == a + b      and     s0 == s0  ⊞  s1
       eftMul{T<:Float64}(a::T, b::T, c::T)
           an errorfree transformation for the multiplication of three Float64s
           
   
   
 #### Term and Symbol Mneumonics
+
+  __⊕__  is  lossless addition  
+  __⊗__  is  lossless multiplication  
+  
+  __⊞__  is  the usual floating point addition  
+  __⊠__  is  the usual floating point multiplication  
 
 
   __∧__  is conjunction:&nbsp;&nbsp;&nbsp;&nbsp;  _a_ __∧__ _b_ &nbsp;  __⟺__   &nbsp; both _a_ and _b_ hold true  
