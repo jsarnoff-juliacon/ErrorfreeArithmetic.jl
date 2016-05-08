@@ -28,7 +28,7 @@ Functions that are errorfree tranformations per se are named using the prefix __
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
   without implying another connection amoung _a_ and _b_  
 
-  __ST__ is such_that:&nbsp;&nbsp;&nbsp;&nbsp;    _a_ __ST__ _A_  &nbsp; __⟾__ &nbsp; _a_ is given and here, _a_ is _A_
+  __ST__ is such_that:&nbsp;&nbsp;&nbsp;&nbsp;    _a_ __ST__ _A_  &nbsp; __⟺__ &nbsp; _a_ is given and here, _a_ is _A_
 
 
       ulp( value::FloatingPoint ) ≜ unit_last_place( value )   
