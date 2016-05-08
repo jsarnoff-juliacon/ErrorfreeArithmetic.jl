@@ -5,6 +5,14 @@
 =#
 
 
+
+
+
+renormalize{T<:StdFloat}(a0::T,a1::T) = eftSumGTE(a0,a1)
+renormalizeAs1{T<:StdFloat}(a0::T,a1::T) = a0+a1
+
+
+
 function renormalize{T<:StdFloat}(a0::T,a1::T,a2::T)
    s,t1 = eftSumGTE(a1,a3)
    b0,t0 = eftSumGTE(a0,s)
@@ -15,7 +23,7 @@ function renormalize{T<:StdFloat}(a0::T,a1::T,a2::T)
    b0,b1,b2
 end
 
-function renormalizeAs2{T<:StdFloat}(a0::T,a1::T,a2::T,a3::T)
+function renormalizeAs2{T<:StdFloat}(a0::T,a1::T,a2::T)
    s,t1 = eftSumGTE(a1,a3)
    b0,t0 = eftSumGTE(a0,s)
    
@@ -24,6 +32,12 @@ function renormalizeAs2{T<:StdFloat}(a0::T,a1::T,a2::T,a3::T)
    b0,b1
 end
 
+function renormalizeAs1{T<:StdFloat}(a0::T,a1::T,a2::T)
+   b0  = a1+a3
+   b0 += a0
+
+   b0
+end
 
 #=
    follows Algorithm A.9
@@ -66,6 +80,14 @@ function renormalizeAs2{T<:StdFloat}(a0::T,a1::T,a2::T,a3::T)
    b0,b1
 end
 
+function renormalizeAs1{T<:StdFloat}(a0::T,a1::T,a2::T,a3::T)
+   b0 = a2+a3
+   b0 += a1
+   b0 += a0
+
+   b0
+end
+
 #=
    follows Algorithm A.8 
    in Mixed Precision Iterative Methods using High Precision Arithmetic
@@ -104,7 +126,7 @@ function renormalizeAs3{T<:StdFloat}(a0::T,a1::T,a2::T,a3::T,a4::T)
 end
 
 function renormalizeAs2{T<:StdFloat}(a0::T,a1::T,a2::T,a3::T,a4::T)
-s,t3 = eftSumGTE(a3,a4)
+   s,t3 = eftSumGTE(a3,a4)
    s,t2 = eftSumGTE(a2,s)
    s,t1 = eftSumGTE(a1,s)
    b0,t0 = eftSumGTE(a0,s)
@@ -115,3 +137,4 @@ s,t3 = eftSumGTE(a3,a4)
    
    b0,b1
 end   
+
