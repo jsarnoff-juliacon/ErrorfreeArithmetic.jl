@@ -26,14 +26,14 @@ Functions that are errorfree tranformations per se are named using the prefix __
 __∧__  is AND:       a __∧__ b signifies that both a and b hold true  
 __ST__ is SuchThat:  _this_ __ST__ _that_ signifies _this_ is so and _that_ is given for _this_  
 
-ulp( value::FloatingPoint ) ≜ unit_last_place( value )   
-       _the significance of the significand's least significant bit_  
-       this is a positive or negative power of two, as it values a single bit [ ulp(0) is 0]  
-            ulp(0b1000) == ulp(0b0001) == 2^(0)       ulp(0b10.0000) == ulp(0b00.1111) == 2^(-4)  
-                  4210           4210                          1234              1234  
+      ulp( value::FloatingPoint ) ≜ unit_last_place( value )   
+        _the significance of the significand's least significant bit_  
+        this is a positive or negative power of two, as it values a single bit [ ulp(0) is 0]  
+             ulp(0b1000) == ulp(0b0001) == 2^(0)       ulp(0b10.0000) == ulp(0b00.1111) == 2^(-4)  
+                   4210           4210                          1234              1234  
 
-ufp( value::FloatingPoint)  ≜ unit_first_place( value )   
-       _the significance of the significand's most significant bit_  
-            this is a positive or negative power of two, as it values a single bit [ ulp(0) is 0]  
-            ufp(0b1000) == ufp(0b0001) == 2^(4)       ufp(0b0010.00) == ulp(0b0000.11) == 2^(4)  
-                  4210           4210                       4210 12           4210 12  
+      ufp( value::FloatingPoint)  ≜ unit_first_place( value )   
+        _the significance of the significand's most significant bit_  
+             this is a positive or negative power of two, as it values a single bit [ ulp(0) is 0]  
+             ufp(0b1000) == ufp(0b0001) == 2^(4)       ufp(0b0010.00) == ulp(0b0000.11) == 2^(4)  
+                   4210           4210                       4210 12           4210 12  
