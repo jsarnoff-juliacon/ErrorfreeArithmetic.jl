@@ -20,8 +20,8 @@ Functions that are errorfree tranformations per se are named using the prefix __
           an errorfree transformation for the multiplication of three Float64s
           
  Functions that return a tuple of length N where N does not equal the argument count  
- are named using the suffix <lowercase>_AsN_ or <uppercase>_AsN_ :  
- &npsp;&nbsp;eftAddAs2(a,b,c), eftAddGTEas2(a,b,c)
+ &nbsp;&nbsp;&nbsp;&nbsp;are named using the suffix <lowercase>_AsN_ or <uppercase>_AsN_ :  
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;eftAddAs2(a,b,c), eftAddGTEas2(a,b,c)
  
   
 #### Term and Symbol Mneumonics
