@@ -4,6 +4,27 @@
         ?4 significant bits?
 =#
 
+
+function renormalize{T<:StdFloat}(a0::T,a1::T,a2::T)
+   s,t1 = eftSumGTE(a1,a3)
+   b0,t0 = eftSumGTE(a0,s)
+   
+   b1,t0 = eftSumGTE(t0,s)
+   b2 = t0+t1
+   
+   b0,b1,b2
+end
+
+function renormalizeAs2{T<:StdFloat}(a0::T,a1::T,a2::T,a3::T)
+   s,t1 = eftSumGTE(a1,a3)
+   b0,t0 = eftSumGTE(a0,s)
+   
+   b1 = t0+s
+
+   b0,b1
+end
+
+
 #=
    follows Algorithm A.9
    in Mixed Precision Iterative Methods using High Precision Arithmetic
@@ -11,7 +32,7 @@
 =#
 
 function renormalize{T<:StdFloat}(a0::T,a1::T,a2::T,a3::T)
-   s,t2 = eftSumGTE(a2,s)
+   s,t2 = eftSumGTE(a2,a3)
    s,t1 = eftSumGTE(a1,s)
    b0,t0 = eftSumGTE(a0,s)
    
@@ -23,7 +44,7 @@ function renormalize{T<:StdFloat}(a0::T,a1::T,a2::T,a3::T)
 end
 
 function renormalizeAs3{T<:StdFloat}(a0::T,a1::T,a2::T,a3::T)
-   s,t2 = eftSumGTE(a2,s)
+   s,t2 = eftSumGTE(a2,a3)
    s,t1 = eftSumGTE(a1,s)
    b0,t0 = eftSumGTE(a0,s)
    
@@ -35,7 +56,7 @@ function renormalizeAs3{T<:StdFloat}(a0::T,a1::T,a2::T,a3::T)
 end
 
 function renormalizeAs2{T<:StdFloat}(a0::T,a1::T,a2::T,a3::T)
-   s,t2 = eftSumGTE(a2,s)
+   s,t2 = eftSumGTE(a2,a3)
    s,t1 = eftSumGTE(a1,s)
    b0,t0 = eftSumGTE(a0,s)
    
