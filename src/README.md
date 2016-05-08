@@ -23,12 +23,12 @@ Functions that are errorfree tranformations per se are named using the prefix __
   
 #### Term and Symbol Mneumonics
 
-```latex
+
 __∧__  is conjunction:       _a_ __∧__ _b_ signifies both _a_ and _b_ hold true  
                                  without implying another connection amoung _a_ and _b_  
 
 __ST__ is such_that:  _a_ __ST__ _a_ is _A_ signifies _a_ is so and this _a_ is an _A_ish _a_  
-```
+
 
       ulp( value::FloatingPoint ) ≜ unit_last_place( value )   
         _the significance of the significand's least significant bit_  
