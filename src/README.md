@@ -4,9 +4,10 @@
 |------|---------|
 | ErrorfreeArithmetic.jl | the module realization, includes the others |
 | single.jl | provide arithmetic functions of 1 argument |
-| double.jl | provide arithmetic functions of 2 argument |
-| triple.jl | provide arithmetic functions of 3 argument |
-| quadruple.jl | provide arithmetic functions of 4 argument |
+| double.jl | provide arithmetic functions of 2 arguments |
+| triple.jl | provide arithmetic functions of 3 arguments |
+| quadruple.jl | provide arithmetic functions of 4 arguments |
+| quintuple.jl | provide renormalization functions of 5 arguments |
 
 #### Notes
 
