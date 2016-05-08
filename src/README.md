@@ -7,7 +7,7 @@
 | double.jl | provide arithmetic functions of 2 arguments |
 | triple.jl | provide arithmetic functions of 3 arguments |
 | quadruple.jl | provide arithmetic functions of 4 arguments |
-| quintuple.jl | provide renormalization functions of 5 arguments |
+| quintuple.jl | renormalization functions of 5 arguments |
 
 #### Notes
 
