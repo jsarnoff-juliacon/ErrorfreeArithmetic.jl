@@ -39,7 +39,7 @@ function eftMul{T<:StdFloat}(a::T, b::T, c::T)
     z,t = eftMul(e,c)
     y,z = eftAdd(y,z)
     x,y = eftAdd(x,y)
-    eftAddGTE4to3(x,y,z,t)
+    eftAddGTEas3(x,y,z,t)
 end
 
 function eftMulAs2{T<:StdFloat}(a::T, b::T, c::T)
