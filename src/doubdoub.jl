@@ -31,12 +31,17 @@ end
 
 
 function eftMulHiLo{T<:StdFloat}(ahi::T, alo::T, bhi::T, blo::T)
-  t1,t2 = eftMul(ahi,bhi)
+  #t1,t2 = eftMul(ahi,bhi)
+  t1 = ahi * bhi
+  t2 = fma(ahi, bhi, -t1)
   t3 = ahi * blo
   t4 = alo * bhi
   t5 = t3 + t4
   t6 = t2 + t5
-  eftAddGTE(t1,t6)
+  # eftAddGTE(t1,t6)
+  t5 = t1 + t6
+  t6 = t6 - (t6 - t1)
+  t5,t6
 end
 
 function eftMulHiLo{T<:StdFloat}(ahi::T, alo::T, b::T)
