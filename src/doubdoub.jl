@@ -29,7 +29,7 @@ function eftSubHiLo{T<:StdFloat}(ahi::T, alo::T, b::T)
     eftAddGTE(s1,s2)
 end
 
-@inline function inlEftAddGTE}{T<:StdFloat}(a::T, b::T)
+@inline function inlEftAddGTE{T<:StdFloat}(a::T, b::T)
   hi = a + b
   lo = b - (hi - a)
   hi, lo
