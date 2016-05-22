@@ -25,4 +25,7 @@ include("double.jl")
 include("triple.jl")
 include("quadruple.jl")
 
+include("renormalize.jl")
+include("doubdoub.jl")
+
 end # module
