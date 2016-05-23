@@ -10,6 +10,7 @@ export eftIncr, eftDecr, eftSqr, eftRecip,   # single
        eftFMA, eftFMA, eftFMAas2, eftFMSas2,
        eftAddAs3, eftAddGTEas3,              # quadruple (also eftAdd, eftAddGTE)
        eftIncr_inline, eftDecr_inline,       # inline versions
+       eftSqr_inline,
        eftAdd_inline, eftAddGTE_inline,
        eftSub_inline, eftSubGTE_inline,
        eftMul_inline
