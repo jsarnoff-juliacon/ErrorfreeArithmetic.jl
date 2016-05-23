@@ -1,58 +1,49 @@
-# single argument
+# one argument
 
 @inline function eftSqr_inline{T<:StdFloat}(a::T)
     hi = a * a
-    lo = fma(a, a, -hi)
-    hi,lo
+    hi, fma(a, a, -hi)
 end
 
 @inline function eftIncr_inline{T<:StdFloat}(a::T)
     b = one(T)
     hi = a + b
     t = hi - a
-    lo = (a - (hi - t)) + (b - t)
-    hi,lo
+    hi, ((a - (hi - t)) + (b - t))
 end
 
 @inline function eftDecr_inline{T<:StdFloat}(a::T)
     b = one(T)
     hi = a - b
     t = hi - a
-    lo = (a - (hi - t)) - (b + t)
-    hi,lo
+    hi, ((a - (hi - t)) - (b + t))
 end
 
 # two arguments
 
-
 @inline function eftAdd_inline{T<:StdFloat}(a::T, b::T)
   hi = a + b
   t = hi - a
-  lo = (a - (hi - t)) + (b - t)
-  hi,lo
+  hi, ((a - (hi - t)) + (b - t))
 end
 
 @inline function eftAddGTE_inline{T<:StdFloat}(a::T, b::T)
   hi = a + b
-  lo = b - (hi - a)
-  hi,lo
+  hi, (b - (hi - a))
 end
 
 @inline function eftSub_inline{T<:StdFloat}(a::T, b::T)
   hi = a - b
   t = hi - a
-  lo = (a - (hi - t)) - (b + t)
-  hi,lo
+  hi, ((a - (hi - t)) - (b + t))
 end
 
 @inline function eftSubGTE_inline{T<:StdFloat}(a::T, b::T)
   hi = a - b
-  lo = (a - hi) - b
-  hi,lo
+  hi, ((a - hi) - b)
 end
 
 @inline function eftMul_inline{T<:StdFloat}(a::T, b::T)
     hi = a * b
-    lo = fma(a, b, -hi)
-    hi,lo
+    hi, fma(a, b, -hi)
 end
