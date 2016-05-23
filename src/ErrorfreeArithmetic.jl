@@ -2,7 +2,8 @@ module ErrorfreeArithmetic
 
 import Base: (+),(-),(*),(/),fma,sqrt
 
-export eftIncr, eftDecr, eftSqr, eftRecip,   # single
+export HasFMAonChip,
+       eftIncr, eftDecr, eftSqr, eftRecip,   # single
        accInv, accSqrt, accSqrtForSign,
        eftAdd, eftSub, eftMul, accDiv,       # double
        eftAddGTE, eftSubGTE, accDivForSign,
@@ -24,6 +25,8 @@ if !isdefined(:StdFloat)
     typealias StdFloat Union{Float64,Float32,Float16}
   end
 end    
+
+include("HasFMAonChip.jl")  # const HasFMAonChip::Bool
 
 include("single.jl")
 include("double.jl")
