@@ -11,9 +11,9 @@ export eftIncr, eftDecr, eftSqr, eftRecip,   # single
        eftAddAs3, eftAddGTEas3,              # quadruple (also eftAdd, eftAddGTE)
        eftIncr_inline, eftDecr_inline,       # inline versions
        eftSqr_inline,
-       eftAdd_inline, eftAddGTE_inline,
+       eftAdd_inline, eftAddAs2_inline, eftAddGTE_inline,
        eftSub_inline, eftSubGTE_inline,
-       eftMul_inline
+       eftMul_inline, eftMulAs2_inline
 
 
 # all functions use type StdFloat
