@@ -81,7 +81,7 @@ end
     z,t = eftMul_inline(e,c)
     y,z = eftAdd_inline(y,z)
     x,y = eftAdd_inline(x,y)
-    eftAddGTEas3_inline(x,y,z,t)
+    eftAddGTEas3(x,y,z,t)
 end
 
 @inline function eftMulAs2_inline{T<:StdFloat}(a::T, b::T, c::T)
@@ -89,7 +89,7 @@ end
     x,y = eftMul_inline(p,c)
     z   = e*c
     y,z = eftAdd_inline(y,z)
-    eftAdd_inline(x,y)
+    eftAdd(x,y)
 end
 
 #=
@@ -99,6 +99,6 @@ end
     z,t = eftMul_inline(e,c)
     y,z = eftAdd_inline(y,z)
     x,y = eftAdd_inline(x,y)
-    eftAddGTE_inline(x,y,z,t)
+    eftAddGTE(x,y,z,t)
 end
 =#
