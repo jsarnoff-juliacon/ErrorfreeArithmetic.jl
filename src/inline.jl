@@ -47,3 +47,58 @@ end
     hi = a * b
     hi, fma(a, b, -hi)
 end
+
+# three arguments
+
+@inline function eftAdd_inline{T<:StdFloat}(a::T,b::T,c::T)
+    s,t = eftAdd_inline(b, c)
+    x,u = eftAdd_inline(a, s)
+    y,z = eftAdd_inline(u, t)
+    x,y = eftAddGTE_inline(x, y)
+    x,y,z
+end
+
+@inline function eftAddGTE_inline{T<:StdFloat}(a::T,b::T,c::T)
+    s,t = eftAddGTE_inline(b, c)
+    x,u = eftAddGTE_inline(a, s)
+    y,z = eftAddGTE_inline(u, t)
+    x,y = eftAddGTE_inline(x, y)
+    x,y,z
+end
+
+
+@inline function eftAddAs2_inline{T<:StdFloat}(a::T,b::T,c::T)
+    s,t = eftAdd_inline(b, c)
+    x,u = eftAdd_inline(a, s)
+    y   = u+t
+    x,y = eftAddGTE_inline(x, y)
+    x,y
+end
+
+@inline function eftMul_inline{T<:StdFloat}(a::T, b::T, c::T)
+    p,e = eftMul_inline(a,b)
+    x,y = eftMul_inline(p,c)
+    z,t = eftMul_inline(e,c)
+    y,z = eftAdd_inline(y,z)
+    x,y = eftAdd_inline(x,y)
+    eftAddGTEas3_inline(x,y,z,t)
+end
+
+@inline function eftMulAs2_inline{T<:StdFloat}(a::T, b::T, c::T)
+    p,e = eftMul_inline(a,b)
+    x,y = eftMul_inline(p,c)
+    z   = e*c
+    y,z = eftAdd_inline(y,z)
+    eftAdd_inline(x,y)
+end
+
+#=
+@inline function eftMulAs4_inline{T<:StdFloat}(a::T, b::T, c::T)
+    p,e = eftMul_inline(a,b)
+    x,y = eftMul_inline(p,c)
+    z,t = eftMul_inline(e,c)
+    y,z = eftAdd_inline(y,z)
+    x,y = eftAdd_inline(x,y)
+    eftAddGTE_inline(x,y,z,t)
+end
+=#
