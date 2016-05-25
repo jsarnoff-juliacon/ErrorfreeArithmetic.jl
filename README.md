@@ -1,7 +1,7 @@
 ## ErrorfreeArithmetic
 errorfree transformations and other arithmetic mappings of like accuracy
 ```ruby
-                                                       Jeffrey Sarnoff © 2016-Mar-22 at New York
+                                                       Jeffrey Sarnoff © 2016-Mar-22 in New York City
 ```
 #### Exports
   eftIncr, eftDecr, eftSqr, eftRecip,   # 1 arg  
