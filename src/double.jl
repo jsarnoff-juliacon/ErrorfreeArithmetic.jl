@@ -12,6 +12,12 @@ function eftAddGTE{T<:StdFloat}(a::T, b::T)
   hi,lo
 end
 
+function eftAddLTE{T<:StdFloat}(a::T, b::T)
+  hi = a + b
+  lo = a - (hi - b)
+  hi,lo
+end
+
 function eftSub{T<:StdFloat}(a::T, b::T)
   hi = a - b
   t = hi - a
