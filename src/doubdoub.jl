@@ -1,6 +1,6 @@
 function eftAddHiLo{T<:StdFloat}(ahi::T, alo::T, bhi::T, blo::T)
-    s1, s2 = eftAdd(a.hi,b.hi)
-    t1, t2 = eftAdd(a.lo,b.lo)
+    s1, s2 = eftAdd(ahi,bhi)
+    t1, t2 = eftAdd(alo,blo)
     s2 += t1
     s1, s2 = eftAddGTE(s1,s2)
     s2 += t2
@@ -15,8 +15,8 @@ end
 
 
 function eftSubHiLo{T<:StdFloat}(ahi::T, alo::T, bhi::T, blo::T)
-    s1, s2 = eftSub(a.hi,b.hi)
-    t1, t2 = eftSub(a.lo,b.lo)
+    s1, s2 = eftSub(ahi,bhi)
+    t1, t2 = eftSub(alo,blo)
     s2 += t1
     s1, s2 = eftAddGTE(s1,s2)
     s2 += t2
@@ -24,7 +24,7 @@ function eftSubHiLo{T<:StdFloat}(ahi::T, alo::T, bhi::T, blo::T)
 end
 
 function eftSubHiLo{T<:StdFloat}(ahi::T, alo::T, b::T)
-    s1, s2 = eftSub(a.hi,b)
+    s1, s2 = eftSub(ahi,b)
     s2 += a.lo
     eftAddGTE(s1,s2)
 end
