@@ -56,7 +56,7 @@ end
 
 function eftAddAs3{T<:StdFloat}(a::T,b::T,c::T,d::T)
 
-   w=x=y=z=zero(T)
+   w=x=y=zero(T)
    
    w,d = eftAdd(c,d)
    w,c = eftAdd(b,w)
@@ -81,6 +81,30 @@ function eftAddAs3{T<:StdFloat}(a::T,b::T,c::T,d::T)
    
    w,x,y
 end
+
+function eftAddAs2{T<:StdFloat}(a::T,b::T,c::T,d::T)
+
+   w=x=zero(T)
+   
+   w,d = eftAdd(c,d)
+   w,c = eftAdd(b,w)
+   a,b = eftAdd(a,w)
+   
+   w,x = a,b
+   if x != zero(T)
+       x += c + d
+   else
+       w,x = eftAddGTE(w,c)
+       if x != zero(T)
+           x +=  d
+       else
+           w,x = eftAddGTE(w,d)
+       end
+   end
+   
+   w,x
+end
+
 
 function eftAddGTEas3{T<:StdFloat}(a::T,b::T,c::T,d::T)
 
