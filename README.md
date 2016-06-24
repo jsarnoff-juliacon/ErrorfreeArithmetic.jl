@@ -11,7 +11,7 @@ The name of each exported function begins with a thrice lettered acronym.  This 
     ----------------------|--------|--------------------------------|------------------------------------------|
     evaluates errorfree   |  eft   | `E`rror`F`ree `T`ransformation | RoundNearest using 31+ extra bits        |
     evaluates faithfully  |  far   | `FA`ithful `R`ounding          | \|ans-ideal\|/ans <= eps(ans)              |
-    evaluates accurately  |  acr   | `ACC`urate `R`ounding          | \|ans-ideal\|/ans <= 2 \*\ eps(ans) \*\ condition  |
+    evaluates accurately  |  acr   | `ACC`urate `R`ounding          | \|ans-ideal\|/ans <= 2 \* eps(ans) \* condition  |
     
 
 #### Exports
