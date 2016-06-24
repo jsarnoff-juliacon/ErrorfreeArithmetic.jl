@@ -9,8 +9,8 @@ The name of each exported function begins with a thrice lettered acronym.  This 
     
     sortal | prefix | acronym
     ------------------------------------|-----|-------------------------------
-    this function evaluates errorfree   | eft | `e`rror`f`ree `t`ransformation 
-    this function evaluates faithfully  | far | `fa`ithful `r`ounding
+    this function evaluates errorfree   | eft | _`e`_rror`f`ree `t`ransformation 
+    this function evaluates faithfully  | far | `_fa_`ithful `r`ounding
     
 
 #### Exports
