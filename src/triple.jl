@@ -6,6 +6,13 @@ function eftAddGTE{T<:StdFloat}(a::T,b::T,c::T)
     x,y,z
 end
 
+function eftAddGTEas2{T<:StdFloat}(a::T,b::T,c::T)
+    s,t = eftAddGTE(b, c)
+    x,u = eftAddGTE(a, s)
+    y   = u+t
+    x,y = eftAddGTE(x, y)
+    x,y
+end
 
 function eftAdd{T<:StdFloat}(a::T,b::T,c::T)
     s,t = eftAdd(b, c)
