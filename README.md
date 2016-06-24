@@ -7,10 +7,11 @@ errorfree transformations and other arithmetic mappings of like accuracy
 
 The name of each exported function begins with a thrice lettered acronym.  This prefix classifies the accuracy of the evaluand into one of two sorts:  
     
-    sortal | prefix | acronym
-    ------------------------------------|-----|-------------------------------
-    this function evaluates errorfree   | eft | `E`rror`F`ree `T`ransformation 
-    this function evaluates faithfully  | far | `FA`ithful `R`ounding
+    sortal | prefix | acronym | semantics
+    ------------------------------------|-----|--------------------------------|------------------------------
+    evaluates errorfree   | eft | `E`rror`F`ree `T`ransformation | RoundNearest using 31+ extra bits
+    evaluates faithfully  | far | `FA`ithful `R`ounding          | |ans-ideal|/ans <= eps(ans)
+    evaluates accurately  | acr | `ACC`urate `R`ounding          | |ans-ideal|/ans <= 2*eps(ans)*condition
     
 
 #### Exports
