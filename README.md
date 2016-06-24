@@ -15,13 +15,14 @@ The name of each exported function begins with a thrice lettered acronym.  This 
     
 
 #### Exports
-  eftIncr, eftDecr, eftSqr, eftRecip,   # 1 arg  
-  accSqrt, accSqrtForSign,  
-  eftAdd, eftSub, eftMul, eftDiv,       # 2 args  
+  eftIncr, eftDecr, eftSqr,                   # 1 arg  
+  accSqrt, accSqrtForSign, accInv,  
+  eftAdd, eftSub, eftMul, eftDiv,             # 2 args  
   eftAddGTE, eftSubGTE, eftDivApprox,
-  eftAddAs2, eftMulAs4, eftMulAs2,      # 3 args (also eftAdd, eftAddGTE, eftMul)  
+  eftAddGTE, eftAdd, eftAddAs2,               # 3 args
+  eftMul, eftMulAs2, eftMulAs3           
   eftFMA, eftFMA, eftFMAas2, eftFMSas2,  
-  eftAddAs3, eftAddGTEas3               # 4 args (also eftAdd, eftAddGTE)
+  eftAddGTE, eftAddGTEas3, eftAdd, eftAddAs3  # 4 args
 
 #### Use
 ```julia
