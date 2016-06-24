@@ -18,8 +18,8 @@ The name of each exported function begins with a thrice lettered acronym.  This 
 ```julia
   eftIncr, eftDecr, eftSqr,                   # 1 arg  
   accSqrt, accSqrtForSign, accInv,  
-  eftAdd, eftSub, eftMul, eftDiv,             # 2 args  
-  eftAddGTE, eftSubGTE, eftDivApprox,
+  eftAdd, eftSub, eftMul, accDiv,             # 2 args  
+  eftAddGTE, eftSubGTE, accDivApprox,
   eftAddGTE, eftAdd, eftAddAs2,               # 3 args  
   eftMul, eftMulAs2, eftMulAs3           
   eftFMA, eftFMA, eftFMAas2, eftFMSas2,  
