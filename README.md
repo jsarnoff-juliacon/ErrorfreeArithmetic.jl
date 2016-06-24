@@ -3,6 +3,16 @@ errorfree transformations and other arithmetic mappings of like accuracy
 ```ruby
                                                        Jeffrey Sarnoff © 2016-Mar-22 in New York City
 ```
+#### Nomenclature
+
+The name of each exported function begins with a thrice lettered acronym.  This prefix classifies the accuracy of the evaluand into one of two sorts:  
+    
+    sortal | prefix | acronym
+    ------------------------------------|-----|-------------------------------
+    this function evaluates errorfree   | eft | `e`rror`f`ree `t`ransformation 
+    this function evaluates faithfully  | far | `fa`ithful `r`ounding
+    
+
 #### Exports
   eftIncr, eftDecr, eftSqr, eftRecip,   # 1 arg  
   accSqrt, accSqrtForSign,  
