@@ -19,7 +19,7 @@ The name of each exported function begins with a thrice lettered acronym.  This 
   eftIncr, eftDecr, eftSqr,                   # 1 arg  
   accSqrt, accSqrtForSign, accInv,  
   eftAdd, eftSub, eftMul, accDiv,             # 2 args  
-  eftAddGTE, eftSubGTE, accDivApprox,
+  eftAddGTE, eftSubGTE, accDivForSign,
   eftAddGTE, eftAddGTEas2, eftAdd, eftAddAs2, # 3 args  
   eftMul, eftMulAs3, eftMulAs2,           
   eftFMA, eftFMA, eftFMAas2, eftFMSas2,  
