@@ -2,6 +2,7 @@
 errorfree transformations and other arithmetic mappings of like accuracy
 ```ruby
                                                        Jeffrey Sarnoff © 2016-Mar-22 in New York City
+                                                                         2016-Jun-25 at v"0.1.0"
 ```
 #### Nomenclature
 
@@ -9,9 +10,8 @@ The name of each exported function begins with a thrice lettered acronym.  This 
     
     sortal                | prefix | acronym                        | semantics (!rigourous review needed!)      |
     ----------------------|--------|--------------------------------|------------------------------------------|
-    evaluates errorfree   |  eft   | `E`rror`F`ree `T`ransformation | RoundNearest using 31+ extra bits        |
-    evaluates faithfully  |  far   | `FA`ithful `R`ounding          | \|ans-ideal\|/ans <= eps(ans)              |
-    evaluates accurately  |  acr   | `ACC`urate `R`ounding          | \|ans-ideal\|/ans <= 2 \* eps(ans) \* condition  |
+    evaluates errorfree   |  eft   | `E`rror`F`ree `T`ransformation | RoundNearest using 24/53 extra bits        |
+    evaluates accurately  |  acc   | `ACC`urate rounding          | \|ans-ideal\|/ans <= 2 \* eps(ans)  |
     
 
 #### Exports
