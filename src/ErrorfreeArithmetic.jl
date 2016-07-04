@@ -26,15 +26,15 @@ if !isdefined(:StdFloat)
   end
 end    
 
-include("HasFMAonChip.jl")  # const HasFMAonChip::Bool
+include("support/HasFMAonChip.jl")  # const HasFMAonChip::Bool
 
-include("single.jl")
-include("double.jl")
-include("triple.jl")
-include("quadruple.jl")
+include("eft_acc/single.jl")
+include("eft_acc/double.jl")
+include("eft_acc/triple.jl")
+include("eft_acc/quadruple.jl")
 
-include("renormalize.jl")
-include("inline.jl")
-include("doubdoub.jl")
+include("hiloType/inline.jl")
+include("hiloType/FloatFloats.jl")
+include("hiloType/renormalize.jl")
 
 end # module
